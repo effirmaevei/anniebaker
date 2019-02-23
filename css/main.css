@@ -17,12 +17,11 @@ body {
 }
 
 .header {
-    background-image: url('../RosesR1.png');
+    background-image: url('../assets/RosesR1.png');
     background-attachment: scroll;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
-
 }
 
 .header .overlay {
