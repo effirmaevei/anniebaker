@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link async defer rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!--navbar styles to look like a navbar
+            navbar-expand-* indicates the navbar should be expanded (x axis) if viewport w is above. Without it, items will also stack vertically on desktop. Not only on mobile (default). * 
+            navbar-brand declares a logo -->
+    <nav class="navbar navbar-expand-md fixed-top bg-dark">
+        <!--aria stuff is just for accessibility labels / flow-->
+
+        <!--To make brand and toggler stay together, put them in the same div-->
+        <a class="navbar-brand" href=#>Home</a>
+
+        <button class="navbar-toggler  bg-iconnav" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=navbar-toggler-icon></span>
+        </button>
+
+        <!--content in next div is going to be a collapsible region = class=navbar-collapse collapse-->
+        <div class='collapse navbar-collapse' id=navbarSupportedContent>
+            <ul class="navbar-nav">
+                <!--required a container-->
+                <!--nav item and links style either the entire item or just the link part-->
+                <li class="nav-item">
+                    <a class="nav-link" data-value="about" href="#">About</a> </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-value="portfolio" href="#">Portfolio</a> </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-value="services" href="#">Services</a> </li>
+            </ul>
+        </div>
+    </nav>
+    <header class="header container justify-center">
+        <div class="overlay"></div>
+        <blockquote style="color:black;z-index: 10;font-weight: 500;position: absolute;top:150px;">Test string; Darlin,</br>
+            I love
+            you</blockquote>
+    </header>
+
+    <div>
+      <script src="./js/jquery-3.3.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossorigin="anonymous"></script>
+      <script src="./js/bootstrap.min.js"></script>
+      <script src="./main.js"></script>
+
+
+    </div>
+
+</body>
+
+</html>
