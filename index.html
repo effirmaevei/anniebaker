@@ -27,7 +27,7 @@
     <!--navbar styles to look like a navbar
             navbar-expand-* indicates the navbar should be expanded (x axis) if viewport w is above. Without it, items will also stack vertically on desktop. Not only on mobile (default). * 
             navbar-brand declares a logo -->
-    <nav class="navbar navbar-expand-md fixed-top bg-dark">
+    <nav class="navbar navbar-expand-lg fixed-top bg-dark">
         <!--aria stuff is just for accessibility labels / flow-->
 
         <!--To make brand and toggler stay together, put them in the same div-->
@@ -52,11 +52,12 @@
             </ul>
         </div>
     </nav>
-    <header class="header container justify-center">
-        <div class="overlay"></div>
-        <blockquote style="color:black;z-index: 10;font-weight: 500;position: absolute;top:150px;">Test string; The
-            cake,</br>
-            is a lie</blockquote>
+    <header class="masthead">
+        <div class="container h-100 overlay">
+            Test string; The cake,</br>
+            is a lie.
+        </div>
+
     </header>
 
     <section>
