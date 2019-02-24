@@ -1,0 +1,79 @@
+Extra small<576px	
+Small≥576px	
+Medium≥768px	
+Large≥992px
+Extra large≥1200px
+
+
+If I use at least one (lg col) in a row, once it's vport width goes above 768px, it will take container 720px width
+ and stay like that until reaching 992px, becoming then a 960px container.) 
+ Upon becoming a 960 container (reaching the large breakpoint (992px)), it will stop stacking and become a single row,
+ so long remaining col elements fit under the constraint of 12 columns per row. 
+ Ex: col-8-lg + col-2-sm + col-2-md will obey this behaviour.
+
+
+Max container width	None (auto)	    540px	    720px	    960px	    1140px
+Class prefix	            .col-	.col-sm-	.col-md-	.col-lg-	.col-xl-
+
+
+bs4 basic elements
+
+active
+align
+alert
+badge
+bg
+quote
+border
+breadcrumb
+btn
+btn-toolbar
+card
+carousel
+container
+custom-range
+custom-select
+drop-downupright
+embed
+fade
+fixed-*
+flexcolumn ( force vertical) 
+flex param wrap fill reverse
+font weight style
+form control-* define size of inputs
+w-100
+h-100
+img-fluid
+img-thumbnail
+input-group (container) 
+input
+jumbotron (emph header) 
+justify start center end
+list
+media (like twitter thingies) 
+modal
+m-#-sm  (margin) 
+mt  margin top
+my mx  axis margins
+mx-auto =centered element
+nav tabs nav bar becomes tabs
+no gutters    column gutter 0
+p-#-sm  (padding) 
+pagination (like google search) 
+rounded
+shadow
+spinner
+tab
+text 
+toast (temporary inner collapsed) 
+
+
+primary
+secondary
+danger
+info
+dark
+light
+block
+group
+show
