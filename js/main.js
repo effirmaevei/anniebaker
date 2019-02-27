@@ -1,10 +1,14 @@
 // $(document).ready(function () {
 
-//     var x = 56; // $('body').css('padding-top');
-//     $('.header').height($(window).height() - x);
-//     $('body').css('padding-top', x);
+//     // var x = 56; // $('body').css('padding-top');
+//     // $('.header').height($(window).height() - x);
+//     // $('body').css('padding-top', x);
+//     console.log(32 + 5);
 // });
 
+// The ! is just a hack to avoid wrapping the self invoking function in parenthesis
+// e is being replaced with jQuery.
+// See for more info. https://stackoverflow.com/questions/10371539/why-define-an-anonymous-function-and-pass-it-jquery-as-the-argument
 ! function (e) {
     "use strict";
     e('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
