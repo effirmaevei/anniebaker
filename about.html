@@ -48,17 +48,22 @@
 
     <section class="">
         <div id="main" class="container m-0 bg-dark pt-3 pb-1">
-            <div>
-                <input type="range" id="heightMod" class="d-block mx-auto mb-4" min="45" max="100" value="72">
+
+            <div class="input-group flex-column w-25 mx-auto">
+                <input type="range" id="heightMod" class="d-block mb-3 mx-auto" min="45" max="100" value="78">
+                <input type="button" value="Download" class="mx-auto mb-4" onclick="DownloadAsImage()">
             </div>
+
+
+
             <div id=dropZone class="area">
-                <img class="holder"></img>
-                <img class="holder"></img>
-                <img class="holder"></img>
+                <img class="holder" src="assets/snap1.png"></img>
+                <img class="holder" src="assets/snap2.png"></img>
+                <img class="holder" src="assets/snap3.png"></img>
             </div>
 
 
-            <div id=dropZzone class=dropZone style=>
+            <div id=dropZzone class=dropZone>
                 <i>Drop images here.</i>
             </div>
         </div>
@@ -70,8 +75,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <!-- Bootstrap -->
         <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Allow div to image conversion -->
+        <script src="./vendor/html2canvas.min.js"></script>
         <!-- Custom script -->
         <script src="./js/dragndrop.js"></script>
+
     </div>
 </body>
 
