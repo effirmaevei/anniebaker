@@ -106,7 +106,7 @@ body {
 }
 
 #main {
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
     position: relative;
     max-width: 100%;
@@ -121,11 +121,11 @@ html {
 
 .area {
     display: flex;
-    height: 50%;
+    height: 100%;
     width: 100%;
     /*sticks together all at center in flexbox*/
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     /*compensates right margin*/
     padding-left: 10px;
 
