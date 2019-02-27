@@ -1,3 +1,5 @@
+//drag and drop behaviour module
+
 var dropZone = document.getElementById('dropZone');
 
 var it = document.getElementsByClassName("holder");
@@ -38,6 +40,8 @@ dropZone.addEventListener('drop', function (e) {
     //dropZone.className = "dropZone2";
 });
 
+//dynamic height module
+
 $(document).ready(function () {
     //const elem = document.querySelector('img.holder');
     const inputs = [].slice.call(document.querySelectorAll('#heightMod'));
@@ -58,3 +62,38 @@ $(document).ready(function () {
     }
 
 })
+
+// Image download behaviour
+
+function downloadURI(uri, name) {
+    var link = document.createElement("a");
+
+    link.download = name;
+    link.href = uri;
+    document.body.appendChild(link);
+    link.click();
+    clearDynamicLink(link);
+}
+
+function DownloadAsImage() {
+    var element = $("#dropZone")[0];
+    html2canvas(element).then(function (canvas) {
+        var myImage = canvas.toDataURL();
+
+        downloadURI(myImage, "Snapshot-" + genTime());
+    });
+}
+
+function genTime() {
+    // get a new date (locale machine date time)
+    var date = new Date();
+    // get the date as a string
+    var n = date.toDateString();
+    // get the time as a string
+    //var time = date.toLocaleTimeString();
+    // find the html element with the id of time
+    // set the innerHTML of that element to the date a space the time
+    //return (n + ' ' + time);
+    return n;
+    //Wed Feb 27 2019 3:34:46 PM
+}
