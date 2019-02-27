@@ -1,41 +1,39 @@
-let dropArea = document.getElementById('drop-area');
+var dropZone = document.getElementById('dropZone');
 
-['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-    dropArea.addEventListener(eventName, preventDefaults, false);
-})
+var it = document.getElementsByClassName("holder");
+var counter = 0;
 
-function preventDefaults(e) {
-    e.preventDefault();
+// Optional.   Show the copy icon when dragging over.  Seems to only work for chrome.
+dropZone.addEventListener('dragover', function (e) {
     e.stopPropagation();
-};
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'copy';
+});
 
-dropArea.addEventListener('drop', handleDrop, false);
+// Get file data on drop
+dropZone.addEventListener('drop', function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+    var files = e.dataTransfer.files; // Array of all files
 
-function handleDrop(e) {
-    let dt = e.dataTransfer;
-    let files = dt.files;
+    for (var i = 0, file; file = files[i]; i++) {
+        if (file.type.match(/image.*/)) {
+            var reader = new FileReader();
 
-    handleFiles(files);
-}
+            reader.onload = function (e2) {
+                if (counter > 2) counter = 0;
+                // finished reading file data.
+                //var img = document.createElement('img');
+                var img = it[counter];
+                img.src = e2.target.result;
+                counter++;
 
+                //document.body.appendChild(img);
+            }
 
-function handleFiles(files) {
-    //files is a FileList, to iterate easier we need an array and ... gives that.
-    ([...files]).forEach(uploadFile)
-}
+            reader.readAsDataURL(file); // start reading the file data.
+        }
+    }
 
-function uploadFile(file) {
-    let url = 'YOUR URL HERE';
-    let formData = new FormData();
-
-    formData.append('file', file);
-
-    fetch(url, {
-            method: 'POST',
-            body: formData
-        })
-        .then(() => {
-            /* Done. Inform the user */ })
-        .catch(() => {
-            /* Error. Inform the user */ });
-}
+    //dropZone.className = "dropZone2";
+});

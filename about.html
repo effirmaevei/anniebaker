@@ -46,24 +46,21 @@
     <header class="">
     </header>
 
-    <section id="main" class="">
+    <section class="">
+        <div id="main" class="container-fluid mt-5 bg-dark p-5">
+            <div id=dropZone class=area style="background-color: grey" ;>
+                <img class="holder"></img>
+                <img class="holder"></img>
+                <img class="holder"></img>
+            </div>
 
-        <div class="container-fluid mt-5 bg-dark p-5">
-            <div class="row" id=drop-area>
-                <div class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <img draggable="true" ondragstart="drag(event)" class="img-thumbnail" src="/assets/chicago.jpg" alt="">
-                </div>
-                <div class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <img draggable="true" ondragstart="drag(event)" class="img-thumbnail" src="/assets/chicago.jpg" alt="">
-                </div>
-                <div class="col" ondrop="drop(event)" ondragover="allowDrop(event)">
-                    <img draggable="true" ondragstart="drag(event)" class="img-thumbnail" src="/assets/chicago.jpg" alt="">
-                </div>
-
+            <div id=dropZzone class=dropZone style=>
+                <i>Drop images here.</i>
             </div>
         </div>
-
     </section>
+
+
     <div>
         <script src="./vendor/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
