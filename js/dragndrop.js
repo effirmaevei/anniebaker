@@ -37,3 +37,24 @@ dropZone.addEventListener('drop', function (e) {
 
     //dropZone.className = "dropZone2";
 });
+
+$(document).ready(function () {
+    //const elem = document.querySelector('img.holder');
+    const inputs = [].slice.call(document.querySelectorAll('#heightMod'));
+
+    inputs.forEach(input => input.addEventListener('change', handleUpdate));
+    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+    console.log(1);
+
+    function handleUpdate(e) {
+        console.log(2);
+        if (this.type === 'color') {
+            elem.style.setProperty('--elem-color', this.value)
+        } else {
+            console.log(3);
+            //elem.style.setProperty('--img-height', this.value + 'px')
+            document.documentElement.style.setProperty('--img-height', this.value + '%');
+        }
+    }
+
+})

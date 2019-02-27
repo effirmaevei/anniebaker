@@ -163,6 +163,12 @@
         <script src="./js/main.js"></script>
     </div>
 
+    <script>
+        document.querySelectorAll("a.nav-link").forEach(function (elem) {
+            elem.setAttribute("href", elem.getAttribute("href") + ".html");
+        });
+    </script>
+
 </body>
 
 </html>
