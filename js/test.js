@@ -1,11 +1,11 @@
-// $(document).ready(
+$(document).ready(
 
-//     function (e) {
-//         // e("#hhh").html("dasda");
-//         var contents = $('#hhh').html();
-//         $('#hhh').html("ssss");
+    function (e) {
+        // jQuery $() uses CSS selectors 
+        var contents = document.getElementById('hhh').innerHTML = "stuff B";
+        $('#hhh').html("Stuff B");
 
-//     });
+    });
 
 // The ! is just a hack to avoid wrapping the self invoking function in parenthesis
 // e is being replaced with jQuery.

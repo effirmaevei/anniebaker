@@ -47,6 +47,8 @@
                     <a class="nav-link" data-value="portfolio" href="#">Portfolio</a> </li>
                 <li class="nav-item">
                     <a class="nav-link" data-value="services" href="#">Services</a> </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-value="pipboy" href="./pipboy">Pipboy Demo</a> </li>
             </ul>
         </div>
     </nav>
@@ -164,6 +166,7 @@
     </div>
 
     <script>
+        //Delete this script in production env
         document.querySelectorAll("a.nav-link").forEach(function (elem) {
             elem.setAttribute("href", elem.getAttribute("href") + ".html");
         });

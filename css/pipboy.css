@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:700');
+
+
+body {
+    padding-top: 56px;
+    color: #14fe17;
+    background: #272b23;
+    font-family: "Fira Mono";
+}
+
+.navbar {
+    border-bottom: 2px solid #14fe17;
+    margin: 10px;
+}
+
+.navbar::before,
+.navbar::after {
+    height: 7px;
+    width: 2px;
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: 30;
+    background: #14fe17;
+    bottom: -6px;
+}
+
+.navbar::before {
+    left: 0px;
+}
+
+.navbar::after {
+    right: 0px;
+}
+
+.m-3 {
+    border-color: #14fe17;
+}
+
+
+ul.navbar-nav.flex-fill {
+    text-align: center;
+}
+
+@media (min-width: 540px) {
+    ul.navbar-nav.flex-fill {
+        text-align: center;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+}
+
+
+
+ul.nav.nav-tabs {
+    border-bottom: 0px solid #14fe17;
+}
+
+
+/* Selector for the fonts inside the div tree */
+.navbar-nav,
+ul>li.nav-item>a.nav-link,
+.nav-item.active {
+    color: #14fe17;
+}
+
+.center-image img {
+    margin: auto;
+    position: relative;
+    max-height: 300px;
+    display: block;
+    margin-top: 100px;
+    /* filter: grayscale(1) brightness(1) contrast(0.5) sepia(80%) saturate(8) hue-rotate(77deg);
+    -webkit-filter: grayscale(1) brightness(1) contrast(0.5) sepia(80%) saturate(8) hue-rotate(77deg); */
+}
+
+.pip-footer {
+    position: fixed;
+    bottom: 0;
+    margin: 10px;
+    width: calc(100% - 20px);
+}
+
+#test {
+    margin: 1px solid #14fe17;
+}
+
+.row.w-100 {}
+
+#test::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    bottom: 25%;
+    left: 5%;
+    width: 80%;
+    right: 15%;
+    height: 10px;
+    background-color: #5bfb61;
+    border-radius: 0;
+    box-shadow: 0px 0px 0px 3px #1a521c;
+}
