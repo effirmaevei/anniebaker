@@ -8,13 +8,27 @@ body {
     font-family: "Fira Mono";
 }
 
-.navbar {
+body::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4) 1px, transparent 1px, transparent 2px);
+    pointer-events: none;
+    opacity: 0.2;
+    z-index: 10000;
+
+}
+
+#mainNav {
     border-bottom: 2px solid #14fe17;
     margin: 10px;
 }
 
-.navbar::before,
-.navbar::after {
+#mainNav::before,
+#mainNav::after {
     height: 7px;
     width: 2px;
     content: "";
@@ -25,44 +39,96 @@ body {
     bottom: -6px;
 }
 
-.navbar::before {
+#mainNav::before {
     left: 0px;
 }
 
-.navbar::after {
+#mainNav::after {
     right: 0px;
 }
 
-.m-3 {
-    border-color: #14fe17;
+
+.navbar ul.navbar-nav {
+    font-size: 20px;
+    line-height: 22px;
+    padding-bottom: 0px;
 }
 
-
-ul.navbar-nav.flex-fill {
-    text-align: center;
-}
-
-@media (min-width: 540px) {
-    ul.navbar-nav.flex-fill {
-        text-align: center;
-        margin-left: 25%;
-        margin-right: 25%;
+@media (min-width: 960px) {
+    .navbar ul.navbar-nav {
+        font-size: 24px;
+        margin-left: 15%;
+        margin-right: 15%;
     }
-
 }
 
 
-
-ul.nav.nav-tabs {
-    border-bottom: 0px solid #14fe17;
-}
-
-
-/* Selector for the fonts inside the div tree */
-.navbar-nav,
-ul>li.nav-item>a.nav-link,
-.nav-item.active {
+/* Selector for the text inside the div tree of the nav tabs */
+ul.nav-tabs>li.nav-item>a.nav-link {
     color: #14fe17;
+    width: 6em;
+    margin: auto;
+    background: #272b23;
+    z-index: 10000;
+    text-align: center;
+
+}
+
+/* Selector for the text inside the div tree of the navbar */
+ul.navbar-nav>.nav-item>a.nav-link {
+    color: #14fe17;
+    width: 3.3em;
+    margin: auto;
+    background: #272b23;
+    padding-right: 0px;
+    padding-left: 0px;
+    z-index: 10000;
+}
+
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+    border-color: transparent;
+}
+
+/* Style the li child n=2 of the container nav-tabs */
+.nav-tabs li:nth-child(2){
+    opacity: 0.6;
+}
+
+.nav-tabs li:nth-child(3){
+    opacity: 0.3;
+}
+
+.border-activee {
+    z-index: -11111111;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: #5bfb61; */
+    background: red;
+    /* box-shadow: 0px -20px 0px 5px #ca8504; */
+}
+
+.nav-item.active {
+    position: relative;
+}
+
+.nav-item.active::before {
+    content: "";
+    position: absolute;
+    background: #272b23;
+    width: 100%;
+    bottom: 0px;
+    height: 77%;
+    left: 0px;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-top: 2px solid;
+    top: 50%;
+    z-index: -1;
+
 }
 
 .center-image img {
@@ -86,19 +152,7 @@ ul>li.nav-item>a.nav-link,
     margin: 1px solid #14fe17;
 }
 
-body::after {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4) 1px, transparent 1px, transparent 2px);
-    pointer-events: none;
-    opacity: 0.2;
-    z-index: 100;
 
-}
 
 .row.w-100 {}
 
