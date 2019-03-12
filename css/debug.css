@@ -79,11 +79,16 @@ footer .nav-item{
 }
 
 footer .nav-item.col-6{
+}
+
+footer > div > ul > li.nav-item.nav-item.col-6{
     padding: 0px 5vw !important;
 }
 
-footer > div > ul > li > a.nav-link{
+footer > div > ul.navbar-nav > li.nav-item > a.nav-link{
     padding: .5rem 0rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
 }
 
 span{
@@ -118,6 +123,10 @@ span{
 @media(max-width: 520px){
     footer .nav-item{
         font-size: 12px !important;
+    }
+
+    footer.navbar{
+        padding: 0.5rem 0rem;
     }
 }
 
