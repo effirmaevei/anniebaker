@@ -1,5 +1,8 @@
 //drag and drop behaviour module
 
+$("#download").on("click", DownloadAsImage);
+
+
 var dropZone = document.getElementById('dropZone');
 
 var it = document.getElementsByClassName("holder");
