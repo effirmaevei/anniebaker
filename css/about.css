@@ -122,7 +122,6 @@ body {
 
 #main {
     /* width: 100vw; */
-    height: 100vh;
     position: relative;
     max-width: 100%;
     margin-left: 0px;
@@ -131,33 +130,68 @@ body {
     padding-left: 0px;
 }
 
-html {
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
 
 .area {
     display: flex;
-    height: 70%;
-    /* height: var(--img-height); */
-    width: 100%;
-    /*sticks together all at center in flexbox*/
-    justify-content: center;
-    align-items: center;
-    /*compensates right margin*/
-    padding-left: 10px;
-    background-color: #343a40;
-    box-shadow: 0 4px 40px #17141d;
+    flex-direction: column;
 }
 
 :root {
     --img-height: 78%;
 }
 
-img {
-    /* height: 100%; */
-    height: var(--img-height);
-    margin-right: 10px;
-    /*height 100% gives cool results*/
+.holder {
+    /* bootstrap image fluid */
+    max-width: 100%;
+    height: auto;
+    padding: 5px;
     object-fit: contain !important;
+
+}
+
+#desktop-info {
+    display: none;
+}
+
+
+
+@media (min-width: 1600px) {
+    .holder {
+        /* height: 100%; */
+        height: var(--img-height);
+        margin-right: 10px;
+        /*height 100% gives cool results*/
+        object-fit: contain !important;
+
+    }
+
+    #desktop-info {
+        display: initial;
+    }
+
+    #main {
+        height: 100vh;
+    }
+
+    .area {
+        display: flex;
+        height: 70%;
+        /* height: var(--img-height); */
+        width: 100% !important;
+        max-width: 100% !important;
+        /*sticks together all at center in flexbox*/
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        /*compensates right margin*/
+        padding-left: 10px;
+        background-color: #343a40;
+        box-shadow: 0 4px 40px #17141d;
+    }
+
+    html {
+        /* overflow-y: hidden; */
+        overflow-x: hidden;
+    }
+
 }
