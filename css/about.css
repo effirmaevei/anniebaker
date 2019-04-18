@@ -1,11 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Kalam:700|Londrina+Solid:900');
 /* .navbar {
     change background of bar
 } */
 
-.nav-link,
-.navbar-brand {
+.nav-link {
     color: #f4f4f4;
     cursor: pointer;
+}
+
+
+
+a.navbar-brand {
+    color: #f4f4f4;
+    cursor: pointer;
+    /*Display flex + align self manipulates only if lineheight is less than font size*/
+    font: 700 35px 'Kalam' !important;
+    /* font: italic 900 35px 'Londrina Solid' !important; */
+    margin-bottom: -7px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    letter-spacing: 0px;
+    /* line-height: 20px !important; */
 }
 
 button:focus {
