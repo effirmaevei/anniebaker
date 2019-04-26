@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Kalam:300,700|Londrina+Solid:900');
+
+$colors:(
+    warm-1: rgba(249, 132, 148, 0.8),
+    warm-2:rgba(214, 130, 70, 0.9),
+    hot-1:rgba(232, 97, 97, 0.8),
+    cold-1:rgba(119, 88, 169, 0.6)
+    // rgba(109, 151, 228, 0.9)rgba(169, 84, 40, 0.54)
+);
+
+$desktop: 768px;
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@function Colour($_color){
+    @return map-get($colors, $_color);
+}
+
+@mixin gradient-transition( $col1, $col2, $col3, $col4, $transTime ){
+    background-size: 100%;
+    background-image: linear-gradient(90deg, $col1, $col2);
+    position: relative;
+    z-index: 100;
+    &:before {
+      background-image: linear-gradient(90deg, $col3, $col4);
+      content: '';    
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      opacity: 0;
+      width: 100%;
+      z-index: -100;
+      transition: opacity $transTime;
+    }
+    &:hover {
+       &:before {
+         opacity: 1; 
+       }
+    }
+  }
+
+body {
+    /* font-family: 'Courier New', Courier, monospace; */
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: Kalam;
+    font-weight: 300;
+    background-color: rgb(16, 21, 36);
+    color: rgba(255, 255, 255, 0.911);
+    text-align: center;
+    font-size: 1rem;
+}
+
+p{
+    margin: 1vh 0vh;
+}
+
+#main{
+    background-color: hsl(223, 51%, 15%);
+    @include desktop{
+        border-left: 20px solid hsl(223, 51%, 15%);
+        border-right: 20px solid hsl(223, 51%, 15%);
+        position: relative;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        //Using fr removes the chance for padding but also unwanted overflows.
+        grid-template-columns: 3fr 7fr;
+        grid-template-rows: auto 1fr;
+        grid-gap: 10px 10px;     //ver hor
+        grid-template-areas: 
+            "left cards"
+            "left footer";
+    }
+}
+#cards{
+    @include desktop{
+        
+        background-color: wheat;
+        position: relative;
+        grid-area: cards;
+        // height: 200px;
+        align-self: center;
+        height: fit-content;
+        margin: 0px;
+        margin-top: 1em;
+        padding: 0px;
+        // padding: 2em;
+        // border-radius: 5px;
+        box-shadow: 0px 6px 4px 0px rgb(113, 93, 113);
+    }
+}
+
+footer{
+    position: relative;
+
+    @include desktop{
+        background-color: white;
+        grid-area: footer;
+        align-self: stretch;
+        height: auto;
+        margin: 0px;
+        margin-top: 0px;
+        margin-bottom: 1em;
+        
+    }
+}
+
+#menu{
+    @include desktop{
+        // height: 100%;
+        grid-area: left;
+        height: auto;
+        align-self: stretch;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }  
+}
+
+.h-container {
+    background-color: coral;
+    width: 100%;
+    position: relative;
+    padding: 2vh 5vw;
+    /* margin: 1em 0em; */
+    /* font-size: 19px; */
+}
+
+.content-overlay {
+    position: absolute;
+}
+
+.content {
+    position: relative;
+    padding: 2vh;
+    margin: auto;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.linear-a {
+    // background-image: gradient(linear-a);
+
+    @include gradient-transition(Colour(cold-1),Colour(hot-1),Colour(warm-1),Colour(warm-2), 1s);
+    /* , height 1s step-start; */
+}
+
+.image-filtered {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    object-fit: cover !important;
+    object-position: center;
+}
+
+.image-filtered:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(76, 71, 119, 0.5);
+    background-image: url(images/overlay.png);
+    background-size: 256px;
+    background-position: top left;
+    background-repeat: repeat;
+    opacity: 1;
+    border-radius: inherit;
+}
+
+img {
+    // position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+    object-position: center;
+    border-radius: 0;
+}
+
+#foot-img{
+    position: relative;
+    width: 100%;
+    // height: auto;
+    z-index: 0;
+}
+
+#foot-text{
+    display: block;   
+    position: absolute; 
+    //color: w;
+    font-size: 2.5rem;
+    font-weight: 700;
+    width: 100%;
+    top: 70%;
+    z-index: 2000;
+}

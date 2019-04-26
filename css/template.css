@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+@import url("https://fonts.googleapis.com/css?family=Kalam:300,700|Londrina+Solid:900");
+body {
+  /* font-family: 'Courier New', Courier, monospace; */
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-family: Kalam;
+  font-weight: 300;
+  background-color: #101524;
+  color: rgba(255, 255, 255, 0.911);
+  text-align: center;
+  font-size: 1rem;
+}
+
+p {
+  margin: 1vh 0vh;
+}
+
+#main {
+  background-color: #131e3a;
+}
+
+@media (min-width: 768px) {
+  #main {
+    border-left: 20px solid #131e3a;
+    border-right: 20px solid #131e3a;
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    -ms-grid-columns: 3fr 7fr;
+        grid-template-columns: 3fr 7fr;
+    -ms-grid-rows: auto 1fr;
+        grid-template-rows: auto 1fr;
+    grid-gap: 10px 10px;
+        grid-template-areas: "left cards" "left footer";
+  }
+}
+
+@media (min-width: 768px) {
+  #cards {
+    background-color: wheat;
+    position: relative;
+    grid-area: cards;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 0px;
+    margin-top: 1em;
+    padding: 0px;
+    -webkit-box-shadow: 0px 6px 4px 0px #715d71;
+            box-shadow: 0px 6px 4px 0px #715d71;
+  }
+}
+
+footer {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  footer {
+    background-color: white;
+    grid-area: footer;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+    height: auto;
+    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 1em;
+  }
+}
+
+@media (min-width: 768px) {
+  #menu {
+    grid-area: left;
+    height: auto;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+.h-container {
+  background-color: coral;
+  width: 100%;
+  position: relative;
+  padding: 2vh 5vw;
+  /* margin: 1em 0em; */
+  /* font-size: 19px; */
+}
+
+.content-overlay {
+  position: absolute;
+}
+
+.content {
+  position: relative;
+  padding: 2vh;
+  margin: auto;
+  width: 100%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.linear-a {
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(119, 88, 169, 0.6)), to(rgba(232, 97, 97, 0.8)));
+  background-image: linear-gradient(90deg, rgba(119, 88, 169, 0.6), rgba(232, 97, 97, 0.8));
+  position: relative;
+  z-index: 100;
+  /* , height 1s step-start; */
+}
+
+.linear-a:before {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(249, 132, 148, 0.8)), to(rgba(214, 130, 70, 0.9)));
+  background-image: linear-gradient(90deg, rgba(249, 132, 148, 0.8), rgba(214, 130, 70, 0.9));
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: -100;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.linear-a:hover:before {
+  opacity: 1;
+}
+
+.image-filtered {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.image-filtered:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(76, 71, 119, 0.5);
+  background-image: url(images/overlay.png);
+  background-size: 256px;
+  background-position: top left;
+  background-repeat: repeat;
+  opacity: 1;
+  border-radius: inherit;
+}
+
+img {
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 0;
+}
+
+#foot-img {
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+#foot-text {
+  display: block;
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: 700;
+  width: 100%;
+  top: 70%;
+  z-index: 2000;
+}
+/*# sourceMappingURL=template.css.map */

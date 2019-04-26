@@ -1,5 +1,24 @@
 {
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-    "python.formatting.provider": "black"
+    "beautify.language": {
+        "html": [
+            "html",
+            "php",
+            "erb"
+        ],
+        "css": [
+            "css"
+        ],
+        "js": []
+    },
+    "beautify.ignore": [
+        "",
+        "**/*.scss"
+    ],
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/css/"
+        }
+    ]
 }

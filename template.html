@@ -1,0 +1,126 @@
+<!-- This is a static web page using bootstrap as styling engine -->
+
+<!-- Requirements 
+
+1. Define square like sections with centered, atractive content that are easily reusable.
+2. Use mobile first design
+3. The squares should be pos relative
+4. Inner elements should be absolute or width 100%, and height 100%.
+
+
+-->
+
+<html>
+
+<head>
+
+    <!-- Ensures proper scaling across devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/template.css">
+
+</head>
+
+<body>
+
+    <div id=main class="container p-0">
+        <div id=menu>
+            <img class="card-image" src="images/bg.jpg">
+        </div>
+        <div id="cards">
+            <section class="h-container">
+                <div class="image-filtered" data-position="center">
+                    <img class="card-image" src="images/forest.png" alt="">
+                </div>
+                <div class="content text-center linear-a">
+                    <p> Hello Dear, </p>
+                    <p class="jumbotro text-center justify-content-center">You're beautiful. <br>Really really
+                        beautiful. ❤</p>
+                </div>
+            </section>
+            <section class="h-container">
+                <div class="image-filtered " data-position="center">
+                    <img class="card-image" src="images/bg.jpg" alt="">
+                </div>
+                <div class="content text-center linear-a">
+                    <p> Hello Darling, </p>
+                    <p class="jumbotro text-center justify-content-center">Did you knew? <br>I made this because of you
+                        :)</p>
+                </div>
+            </section>
+            <section class="h-container">
+                <div class="image-filtered" data-position="center">
+                    <img class="card-image" src="images/rain.jpg" alt="">
+                </div>
+                <div class="content text-center linear-a">
+                    <p> Hello Dear, </p>
+                    <p class="jumbotro text-center justify-content-center text-center"> ❤ I will hug you when you wake
+                        up!
+                        ️ <br>
+                        Just
+                        wait for it!</p>
+                </div>
+            </section>
+        </div>
+        <footer>
+
+            <img id="foot-img" src="images/forest.png">
+            <div id="foot-text">
+                <p>Made by Effirmaevei</p>
+            </div>
+
+
+
+        </footer>
+    </div>
+
+    <div id=scripts>
+        <script src="vendor/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.js"></script>
+
+        <script>
+            let backgroundImage = [
+                'linear-gradient(90deg, rgba(172, 86, 46, 0.466), rgba(236, 138, 58, 0.787))',
+                'linear-gradient(90deg, rgba(46, 54, 172, 0.466), rgba(126, 58, 236, 0.787))',
+                'linear-gradient(90deg, rgba(172, 164, 46, 0.466), rgba(144, 236, 58, 0.787))'
+            ];
+
+            let pos = 0;
+
+            //`url(${imageUrl})`);
+
+            function modifyPresets() {
+                $('.content').css('background-image', backgroundImage[pos]);
+                pos++;
+                if (pos > 2) pos = 0;
+            };
+
+
+            var cSwitch = true,
+                oldClass = 'liner-a',
+                newClass = 'linar-b';
+
+
+            setInterval(() => {
+                // Change classes
+                cSwitch ? $('.' + oldClass).addClass(newClass).removeClass(oldClass) :
+                    $('.' + newClass).addClass(oldClass).removeClass(newClass);
+                //Invert switch
+                cSwitch = !cSwitch;
+            }, 4000);
+
+            // setInterval((pos) => {
+            //     //document.getElementById("myDiv").style.backgroundImage = "url('img_tree.png')";
+
+            //     $('.content').css('background-image', backgroundImage[0]);
+            //     if (pos > 2) pos = 0;
+            // }, 3000)
+            // clearInterval();
+        </script>
+    </div>
+
+</body>
+
+
+</html>
