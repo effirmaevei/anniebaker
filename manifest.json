@@ -1,0 +1,27 @@
+{
+    "short_name": "Effirmaevei",
+    "name": "Effirmaevei Pages",
+    "icons": [
+        {
+            "src": "/assets/favicon.ico",
+            "type": "image/ico",
+            "sizes": "16x16"
+        },
+        {
+            "src": "/assets/icons-256.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/assets/icons-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#fff3e0",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "theme_color": "#617ab9"
+}
