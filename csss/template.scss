@@ -10,11 +10,39 @@ $colors:(
 );
 
 $desktop: 768px;
+$twoK: 2000px;
+$fourK: 3000px;
 
 @mixin desktop {
     @media (min-width: #{$desktop}) {
         @content;
     }
+}
+
+@mixin fourK {
+    @media (min-width: #{$fourK}) {
+        @content;
+    }
+}
+
+@mixin twoK {
+    @media (min-width: #{$twoK}) {
+        @content;
+    }
+}
+
+
+@mixin reset {
+    // height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;    
+}
+
+html{
+    @include reset;
+    height: 100vh;
+    min-height: 100%;       
 }
 
 @function Colour($_color){
@@ -48,12 +76,22 @@ $desktop: 768px;
 body {
     /* font-family: 'Courier New', Courier, monospace; */
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    @include reset;
+    position: relative;
     font-family: Kalam;
     font-weight: 300;
     background-color: rgb(16, 21, 36);
     color: rgba(255, 255, 255, 0.911);
-    text-align: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    min-height: 100vh;
+
+    @include twoK{
+        font-size: 1.5rem;
+    }
+
+    @include fourK{
+        font-size: 2.2rem;
+    }
 }
 
 p{
@@ -62,6 +100,8 @@ p{
 
 #main{
     background-color: hsl(223, 51%, 15%);
+
+    //Use gridlayout on desktop
     @include desktop{
         border-left: 20px solid hsl(223, 51%, 15%);
         border-right: 20px solid hsl(223, 51%, 15%);
@@ -78,17 +118,17 @@ p{
             "left footer";
     }
 }
+
 #cards{
-    @include desktop{
-        
+    //Grid item on desktop
+    @include desktop{        
         background-color: wheat;
         position: relative;
         grid-area: cards;
         // height: 200px;
         align-self: center;
         height: fit-content;
-        margin: 0px;
-        margin-top: 1em;
+        margin: 1em 0 0 0;
         padding: 0px;
         // padding: 2em;
         // border-radius: 5px;
@@ -96,68 +136,72 @@ p{
     }
 }
 
-footer{
-    position: relative;
+#footer{
+    position: relative; 
+    height: 100vh;           /*full screen footer on mobile*/
 
     @include desktop{
+        // padding-bottom: 200px;
         background-color: white;
         grid-area: footer;
         align-self: stretch;
-        height: auto;
-        margin: 0px;
-        margin-top: 0px;
-        margin-bottom: 1em;
-        
+        height: 200px;
+        margin: 0 0 1em 0;    
     }
 }
 
 #menu{
+    //A deployable hamburger menu taking 100vh
+    width: 100%;
+    height: 100vh;
+    
     @include desktop{
         // height: 100%;
         grid-area: left;
         height: auto;
         align-self: stretch;
-        margin-top: 1em;
-        margin-bottom: 1em;
+        margin: 1em 0 1em 0;
     }  
 }
+
 
 .h-container {
     background-color: coral;
     width: 100%;
     position: relative;
-    padding: 2vh 5vw;
-    /* margin: 1em 0em; */
-    /* font-size: 19px; */
-}
+    padding: 1vh 6%;
+    height: fit-content;
 
-.content-overlay {
-    position: absolute;
+    //Optional, standarizes the size of the cards
+    display: flex;
+    align-items: center;
 }
 
 .content {
     position: relative;
-    padding: 2vh;
+    padding: 1rem;
     margin: auto;
     width: 100%;
     transition: all 0.5s ease;
+
+    //Optional, standarizes the size of the cards
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
 }
 
 .linear-a {
-    // background-image: gradient(linear-a);
-
     @include gradient-transition(Colour(cold-1),Colour(hot-1),Colour(warm-1),Colour(warm-2), 1s);
-    /* , height 1s step-start; */
 }
 
 .image-filtered {
-    position: absolute;
+    position: absolute;     //Required to force the child elements to base their dimension from this div
     width: 100%;
     height: 100%;
     left: 0px;
     top: 0px;
-    object-fit: cover !important;
-    object-position: center;
 }
 
 .image-filtered:after {
@@ -176,32 +220,51 @@ footer{
     border-radius: inherit;
 }
 
-img {
-    // position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
+.card-image{
+    position: absolute;
+    //Prevents the image from falling off when outside of grid/flex (like mobile)
+    max-height: 100%;
     width: 100%;
     height: 100%;
-    object-fit: cover !important;
-    object-position: center;
-    border-radius: 0;
 }
 
-#foot-img{
-    position: relative;
-    width: 100%;
-    // height: auto;
+img {
+    display: block;
+    object-fit: cover !important;
+    object-position: center;
+}
+
+.menu-image{
+    height: 100%;    
+    max-width: 100%;
+
+    @include desktop{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.foot-img{
+
+    max-width: 100%;
+    height: 100%;    
     z-index: 0;
+    
+    @include desktop{
+        // position: absolute;
+        width: 100%;
+        height: 100%;
+        object-position: bottom;
+        // margin: 0 0 1em 0;
+    }
 }
 
 #foot-text{
-    display: block;   
     position: absolute; 
-    //color: w;
+    color: rgb(255, 255, 255);
     font-size: 2.5rem;
     font-weight: 700;
     width: 100%;
-    top: 70%;
+    bottom: 5%;
     z-index: 2000;
 }
