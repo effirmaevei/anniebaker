@@ -82,8 +82,12 @@ body {
     font-weight: 300;
     background-color: rgb(16, 21, 36);
     color: rgba(255, 255, 255, 0.911);
-    font-size: 1.2rem;
+    font-size: 1rem;
     min-height: 100vh;
+
+    @include desktop{
+        font-size: 1.2rem;
+    }
 
     @include twoK{
         font-size: 1.5rem;
@@ -169,7 +173,7 @@ p{
     background-color: coral;
     width: 100%;
     position: relative;
-    padding: 1vh 6%;
+    padding: 3% 6%;
     height: fit-content;
 
     //Optional, standarizes the size of the cards

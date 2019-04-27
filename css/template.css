@@ -19,8 +19,14 @@ body {
   font-weight: 300;
   background-color: #101524;
   color: rgba(255, 255, 255, 0.911);
-  font-size: 1.2rem;
+  font-size: 1rem;
   min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.2rem;
+  }
 }
 
 @media (min-width: 2000px) {
@@ -117,7 +123,7 @@ p {
   background-color: coral;
   width: 100%;
   position: relative;
-  padding: 1vh 6%;
+  padding: 3% 6%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
