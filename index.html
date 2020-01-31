@@ -48,15 +48,12 @@
                 <!--required a container-->
                 <!--nav item and links style either the entire item or just the link part-->
                 <li class="nav-item">
-                    <a class="nav-link" data-value="about" href="./about">About</a> </li>
+                    <a class="nav-link" data-value="Welcome" href="#">WELCOME</a> </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-value="debug" href="#">Debug</a> </li>
+                    <a class="nav-link" data-value="Voiceover" href="#">VOICEOVER</a> </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-value="template" href="./template">Template</a> </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-value="pipboy" href="./pipboy">Pipboy Demo</a> </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-value="portfolio" href="./portfolio">Portfolio</a> </li>
+                    <a class="nav-link" data-value="contact" href="#">CONTACT</a> </li>
+                <!-- <a class="nav-link" data-value="contact" href="./contact">CONTACT</a> </li> -->
             </ul>
         </div>
     </nav>
@@ -64,73 +61,72 @@
         <div class="container h-100 header-text">
             <div class="row h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-10 align-self-end">
-                    <h1 class="text-uppercase text-dark font-weight-bold">APPS &#x271A VIDEOGAMES.</h1>
-                    <hr class="divider my-4">
+                    <h1 class="text-uppercase font-weight-bold">&#x271A VOICEOVER &#x271A</h1>
+                    <hr class="divider my-1">
                 </div>
                 <div class="col-lg-8 align-self-baseline">
-                    <p id=kappa class="text-dark" font-weight-normal mb-5">We at Effirmaevei take software and game
-                        development very seriously.<br>
-                        Kickstart your project with us!</p>
-                    <a class="btn btn-danger btn-lg js-scroll-trigger" href="#about">Get Started</a>
+                    <p id=kappa class="text-dark" font-weight-normal mb-5">You can find my voiceover demos down
+                        below. Enjoy!<br><br>
+                    </p>
+                    <!-- <a class="btn btn-danger btn-lg js-scroll-trigger" href="#about">Get Started</a> -->
+
+                    <div class=AudioContainer class="">
+                        <audio id=player></audio>
+
+
+                        <span class="player">
+                            <span class="btn">
+                                <button id=playButton onclick="audioControl('./assets/Reel.mp3');"></button>
+                            </span>
+
+                            <div class="txt">
+                                <div class="title">Character Demo</div>
+                                <div class="artist">Annie Baker</div>
+                            </div>
+
+                            <!-- <button onclick="document.getElementById('player').pause()">Pause</button> -->
+
+
+                        </span>
+
+
+                        <!-- 
+                        <button onclick="document.getElementById('player').volume += 0.1">Vol+ </button>
+                        <button onclick="document.getElementById('player').volume -= 0.1">Vol- </button> -->
+                    </div>
+
+                    <div class=AudioContainer class="">
+                        <!-- <audio id=player> </audio> -->
+
+                        <span class="player">
+                            <span class="btn">
+                                <button id=playButton onclick="audioControl('./assets/Mitsubachi.mp3');"></button>
+                            </span>
+
+                            <div class="txt">
+                                <div class="title">Song cover</div>
+                                <div class="artist">Annie Baker</div>
+                            </div>
+
+                            <!-- <button onclick="document.getElementById('player').pause()">Pause</button> -->
+
+
+                        </span>
+
+
+                        <!-- 
+                            <button onclick="document.getElementById('player').volume += 0.1">Vol+ </button>
+                            <button onclick="document.getElementById('player').volume -= 0.1">Vol- </button> -->
+                    </div>
+
+
+                    <!-- /<audio src="assets/Demo Reel Final Annie.mp3" controls id="audioPlayer"> "Sorry, not compatible with html"</audio> -->
+                    <!-- src="./Demo.mp3" -->
                 </div>
             </div>
         </div>
 
     </header>
-
-    <section>
-        <div class="container mt-4 col-md-6">
-            <form class="">
-                <div class=" input-group input-group-lg mb-3">
-                    <input type="text" class="form-control" placeholder="Your Email">
-                    <div class="btn-group btn-group-lg">
-                        <!-- Somehow adding the span makes the button inner border flat -->
-                        <span></span>
-                        <button class="btn btn-secondary" type="button">Get the latest news</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <section id=slideshow>
-        <div id="demo" class="container carousel slide" data-ride="carousel">
-
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/la.jpg" alt="Los Angeles">
-                    <div class="carousel-caption">
-                        <h3>Los Angeles</h3>
-                        <p>We had such a great time in LA!</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/chicago.jpg" alt="Chicago">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/ny.jpg" alt="New York">
-                </div>
-            </div>
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
-
-        </div>
-
-    </section>
 
     <div>
         <script src="./vendor/jquery-3.3.1.min.js"></script>

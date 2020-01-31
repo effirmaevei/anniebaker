@@ -9,6 +9,24 @@
 // The ! is just a hack to avoid wrapping the self invoking anonymous function in parenthesis
 // e is being replaced with jQuery.
 // See for more info. https://stackoverflow.com/questions/10371539/why-define-an-anonymous-function-and-pass-it-jquery-as-the-argument
+
+function audioControl(song) {
+    var mediaPlayer;
+    mediaPlayer = document.getElementById('player');
+
+
+    // mediaPlayer.controls = false;
+
+    if (mediaPlayer.paused) {
+        mediaPlayer.src = song;
+        mediaPlayer.load();
+        mediaPlayer.play();
+    } else {
+        mediaPlayer.pause();
+        // mediaPlayer.currentTime = 0;
+    }
+}
+
 ! function (e) {
     "use strict";
     e('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
