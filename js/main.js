@@ -22,7 +22,12 @@ function audioControl(song) {
         mediaPlayer.load();
         mediaPlayer.play();
     } else {
-        mediaPlayer.pause();
+        if (mediaPlayer.src == song) {
+            mediaPlayer.pause();
+        } else {
+            mediaPlayer.play();
+        }
+
         // mediaPlayer.currentTime = 0;
     }
 }
