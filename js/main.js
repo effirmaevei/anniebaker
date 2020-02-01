@@ -10,6 +10,8 @@
 // e is being replaced with jQuery.
 // See for more info. https://stackoverflow.com/questions/10371539/why-define-an-anonymous-function-and-pass-it-jquery-as-the-argument
 
+var time = 0;
+
 function audioControl(song) {
     var mediaPlayer;
     mediaPlayer = document.getElementById('player');
@@ -20,12 +22,20 @@ function audioControl(song) {
     if (mediaPlayer.paused) {
         mediaPlayer.src = song;
         mediaPlayer.load();
+        mediaPlayer.currentTime = time;
         mediaPlayer.play();
     } else {
-        if (mediaPlayer.src == song) {
+
+        var temp = mediaPlayer.src;
+        temp = temp.split('/').pop();
+        temp = "./assets/" + temp;
+
+        if (temp == song) {
             mediaPlayer.pause();
+            time = mediaPlayer.currentTime;
         } else {
             mediaPlayer.src = song;
+            time = 0;
             mediaPlayer.load();
             mediaPlayer.play();
         }
