@@ -25,6 +25,8 @@ function audioControl(song) {
         if (mediaPlayer.src == song) {
             mediaPlayer.pause();
         } else {
+            mediaPlayer.src = song;
+            mediaPlayer.load();
             mediaPlayer.play();
         }
 
